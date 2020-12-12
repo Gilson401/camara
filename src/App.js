@@ -13,7 +13,7 @@ import Curso from "./modelos/curso"
 function App() {
 
 
-    
+    const [state, setState] = useState("Clique no botão")
 
 
 const showDisciplina = () =>{
@@ -36,21 +36,8 @@ const showDisciplina = () =>{
     setState(curso)
 }
 
-    const [state, setState] = useState({a:"a"})
+   
 
-
-
-
-    const submitForm = async (event) => {
-        try {
-            const result = await getpartidos()
-            if (result) {
-                setPartidos(result.data.dados)
-            }
-        } catch (e) {
-            alert('Ocorreu um erro no GET de partidos ')
-        }
-    }
 
 
 
@@ -60,14 +47,14 @@ const showDisciplina = () =>{
             <div className="App">
                 <header className="App-header">
 
-                    <p> Clique no botão e veja no console log do terminal a estrutura de dados </p>
+                    <p> Clique no botão e veja abaixo e no console log do terminal a estrutura de dados </p>
                     <div className="mb-2">
-                        <Button onClick={submitForm} variant="primary" size="lg">
+                        <Button onClick={showDisciplina} variant="primary" size="lg">
                             Load CLass  estructure
                         </Button>
                     </div>
 
-                    {state}
+                    { JSON.stringify( state)}
            
                 </header>
             </div>
