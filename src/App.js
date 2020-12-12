@@ -30,9 +30,9 @@ function App() {
     clientHttp.defaults.headers['Content-Type'] = 'application/json';
     // clientHttp.defaults.headers['x-forwarded-proto'] = 'https';
 
-    const getpartidos = (data) => clientHttp.get(`/partidos`)
+    const getpartidos = () => clientHttp.get(`/partidos`)
 
-    const getDeputados = (sigla) => clientHttp.get(`/deputados?siglaPartido=${sigla}&ordem=ASC&ordenarPor=nome`)
+    const getDeputados = (sigla) => clientHttp.get(`/deputados?siglaPartido=${sigla}&itens=100&ordem=ASC&ordenarPor=nome`)
 
     const partidosListados = () => partidos.map((user, index) => (
         <option key={index}>{user.sigla}</option>
@@ -44,7 +44,7 @@ function App() {
 
     useEffect(() => {
 
-
+        submitForm()
     }, [])
 
     const submitForm = async (event) => {
