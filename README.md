@@ -14,4 +14,5 @@ Este projeto possui os seguintes scripts
     "eject": "react-scripts eject"
 
 ## Para rodar o projeto
-Instale as dependências listadas no package.json e instale com npm instal ou yarn    
+Instale as dependências listadas no package.json e instale com npm instal ou yarn   
+Execute o comando npm start
